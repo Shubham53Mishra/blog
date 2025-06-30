@@ -11,7 +11,7 @@ const Navbar = () => {
         <img src={assets.arrow} alt="Arrow" className='w-3' />
        </button>
     </div>
-  )
+  ) 
 }
 
 export default Navbar
