@@ -25,7 +25,7 @@ const Blog = () => {
          <img src={assets.gradientBackground} alt="" className='absolute -top-50 -z-1 opacity-50' />
       <Navbar />
       <div>
-        <p>Published on {data.createdAt}</p>
+        <p>Published on {Moment(data.createdAt).format('MMMM Do YYYY')}</p>
       </div>
       <div></div>
     </div>
