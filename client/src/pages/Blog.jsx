@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { blog_data } from '../assets/assets';
 import Navbar from '../components/Navbar';
+import assets from '../assets/assets';
+import Moment from  'moment';
 
 
 const Blog = () => {
@@ -22,7 +24,9 @@ const Blog = () => {
     <div className='relative'>
          <img src={assets.gradientBackground} alt="" className='absolute -top-50 -z-1 opacity-50' />
       <Navbar />
-      <div></div>
+      <div>
+        <p>Published on {data.createdAt}</p>
+      </div>
       <div></div>
     </div>
   ) : (
