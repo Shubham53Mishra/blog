@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { blog_data } from '../assets/assets';
+import Navbar from '../components/Navbar';
 
 const Blog = () => {
   const { id } = useParams();
@@ -18,8 +19,9 @@ const Blog = () => {
 
   return data ? (
     <div>
-      <h1>{data.title}</h1>
-      <p>{data.content}</p>
+      <Navbar />
+      <div></div>
+      <div></div>
     </div>
   ) : (
     <div>Loading...</div>
