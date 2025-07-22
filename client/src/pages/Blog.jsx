@@ -1,28 +1,29 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import React,{useState} from 'react'
-import {useParams} from 'react-router-dom'
-import { blog_data } from '../assets/assets'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { blog_data } from '../assets/assets';
 
 const Blog = () => {
-  const {id} =useParams()
+  const { id } = useParams();
+  const [data, setData] = useState(null);
 
-  const [data, setData] = useState(null) 
+  useEffect(() => {
+    const fetchBlogData = () => {
+      const blog = blog_data.find(item => String(item._id) === String(id));
+      setData(blog);
+    };
+    fetchBlogData();
+  }, [id]);
 
-  const fetchblogData = async ()=> {
-    const data = blog_data.find(item=> item._id === id)
-    setData(data)
-   } 
-   useEffect(() => {
-    fetchblogData()
-  }, [])
-
-  return (
+  return data ? (
     <div>
-      <h1>Welcome to the Blog Page</h1>
-      <p>Here you can find the latest articles and updates.</p>
+      <h1>{data.title}</h1>
+      <p>{data.content}</p>
     </div>
-  )
-}
+  ) : (
+    <div>Loading...</div>
+  );
+};
 
-export default Blog
+export default Blog;
