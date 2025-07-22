@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 import React,{useState} from 'react'
 import {useParams} from 'react-router-dom'
 import { blog_data } from '../assets/assets'
@@ -11,6 +13,9 @@ const Blog = () => {
     const data = blog_data.find(item=> item._id === id)
     setData(data)
    } 
+   useEffect(() => {
+    fetchblogData()
+  }, [])
 
   return (
     <div>
