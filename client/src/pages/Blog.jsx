@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { blog_data } from '../assets/assets';
 import Navbar from '../components/Navbar';
 
+
 const Blog = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
@@ -18,7 +19,8 @@ const Blog = () => {
   }, [id]);
 
   return data ? (
-    <div>
+    <div className='relative'>
+         <img src={assets.gradientBackground} alt="" className='absolute -top-50 -z-1 opacity-50' />
       <Navbar />
       <div></div>
       <div></div>
